@@ -3,6 +3,9 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Graphics;
 
+// คลาสที่ใช้ในการสร้าง object ที่เป็น container ที่ใช้ในการวาด object ต่างๆ
+// โดยเราจะสร้าง object ของคลาสนี้ขึ้นมา 1 ตัวเท่านั้น
+// คือ object ที่เป็นหน้าต่างที่ใช้ในการวาด object ต่างๆ
 public class MainCanvas extends JPanel {
     public MainCanvas(int w, int h) {
         setPreferredSize(new Dimension(w, h));

@@ -4,13 +4,19 @@ import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
 
+// JPanel คือ class ที่ใช้ในการสร้าง object ที่เป็น container ที่ใช้ในการวาด object ต่างๆ
+// import มาเพื่อให้ class ของเราสามารถสร้าง object ของ JPanel ได้
 public class GridCanvas extends JPanel {
     private final int id;
     private Color[] colors = new Color[4];
+    // ดึง interface ที่ชื่อว่า ColorStrategy มาใช้
     private ColorStrategy colorStrategy;
 
     public GridCanvas(int id, int w, int h) {
+        // setPreferredSize คือ method ที่ใช้ในการกำหนดขนาดของ object นั้นๆ
         setPreferredSize(new Dimension(w, h));
+        // กำหนด id ของ object นั้นๆ
+        // โดยเราจะใช้ id นี้ในการกำหนดว่า object นี้จะอยู่ใน quarter ไหนของหน้าต่าง
         this.id = id;
     }
 
@@ -26,6 +32,9 @@ public class GridCanvas extends JPanel {
     }
 
     public void paintComponent(Graphics g) {
+        // super คือ keyword ที่ใช้ในการเรียก method ของ class แม่
+        // โดยในที่นี้เราจะเรียก method paintComponent ของ class แม่ ซึ่งเป็น method ที่ใช้ในการวาด object ต่างๆ
+        // โดยเราจะเรียก method นี้เพื่อให้ object นี้วาด object ต่างๆ ที่อยู่ใน method paintComponent ของ class แม่
         super.paintComponent(g);
 
         g.setColor(Color.RED);
